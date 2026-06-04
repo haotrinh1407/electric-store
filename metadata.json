@@ -1,0 +1,6 @@
+{
+  "name": "Electro Pro",
+  "description": "Hệ thống quản lý báo giá, đặt mua thiết bị điện và vật tư hạ thế chính hãng cho nhà thầu cơ điện và các công trình dân dụng công nghiệp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

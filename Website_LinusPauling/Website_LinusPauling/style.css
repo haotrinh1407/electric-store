@@ -1,0 +1,114 @@
+/* ===== style.css dùng chung cho cả 8 trang =====
+   Ý tưởng màu: lấy từ mô hình phân tử (nguyên tử N xanh, O đỏ, C than chì) */
+:root{
+  --giay:#f4f6f7;      /* màu nền */
+  --muc:#1c2530;       /* màu chữ chính */
+  --xam:#5d6b78;       /* chữ phụ */
+  --nito:#2a56c6;      /* xanh - màu nhấn chính */
+  --oxy:#c8372d;       /* đỏ - dùng cho điểm nhấn đặc biệt */
+  --vien:#d5dce2;
+  --trang:#ffffff;
+  --font-tieu-de:"Be Vietnam Pro","Segoe UI",Arial,sans-serif;
+  --font-noi-dung:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--giay);color:var(--muc);font-family:var(--font-noi-dung);font-size:1.08rem;line-height:1.75}
+h1,h2,h3{font-family:var(--font-tieu-de);line-height:1.25;margin:0 0 .6em}
+h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.65rem;font-weight:700;margin-top:0}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0 0 1em;max-width:70ch}
+a{color:var(--nito)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--oxy);outline-offset:3px}
+img{max-width:100%;height:auto;display:block;background:#dde3e8;border-radius:6px}
+.container{width:min(1080px,92%);margin:0 auto}
+
+/* ----- Header & menu ----- */
+header.site{background:var(--muc);color:#fff}
+.ten-site{font-family:var(--font-tieu-de);font-weight:700;padding:.9rem 0 .2rem;font-size:1rem;color:#cfd8e3}
+nav ul{list-style:none;margin:0;padding:0 0 .6rem;display:flex;flex-wrap:wrap;gap:.25rem}
+nav a{display:block;padding:.45rem .85rem;color:#fff;text-decoration:none;font-family:var(--font-tieu-de);font-size:.92rem;border-radius:999px;transition:background .2s}
+nav a:hover{background:rgba(255,255,255,.16)}
+nav a.hien-tai{background:var(--nito);font-weight:600}
+
+/* ----- Banner đầu trang ----- */
+.banner{padding:2.4rem 0 1.6rem;border-bottom:1px solid var(--vien);background:var(--trang)}
+.banner p.mo-ta{color:var(--xam);font-size:1.15rem;margin-bottom:0}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:2.5rem;align-items:center;padding:3rem 0}
+.hero h1{margin-bottom:.4em}
+.hero .so-lon{font-family:var(--font-tieu-de);font-weight:800;color:var(--nito);font-size:1.1rem;margin-bottom:1rem}
+.hero img{width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:0 12px 30px rgba(28,37,48,.22)}
+figure{margin:0}
+figcaption{font-size:.85rem;color:var(--xam);margin-top:.5rem;line-height:1.45}
+
+main{padding:2rem 0 3.5rem}
+section{margin-bottom:2.8rem}
+.cau-noi{border-left:6px solid var(--nito);background:var(--trang);padding:1.2rem 1.5rem;font-size:1.3rem;font-style:italic;box-shadow:0 2px 8px rgba(0,0,0,.06);max-width:none}
+.cau-noi cite{display:block;font-size:.9rem;font-style:normal;color:var(--xam);margin-top:.5rem}
+.luu-y{background:#fff4d6;border:1px solid #e6c766;padding:.8rem 1rem;border-radius:6px;font-size:.95rem}
+
+/* ----- Card & Grid ----- */
+.luoi{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem}
+.card{background:var(--trang);border:1px solid var(--vien);border-radius:10px;padding:1.4rem;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(28,37,48,.14)}
+.card .nam{font-family:var(--font-tieu-de);font-weight:700;color:var(--nito);font-size:.95rem;margin-bottom:.3rem}
+.card h3{margin-top:0}
+.card dl{margin:0}
+.card dt{font-family:var(--font-tieu-de);font-weight:600;font-size:.9rem;margin-top:.7rem}
+.card dd{margin:0}
+.hai-cot{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+
+/* ----- Timeline ----- */
+.timeline{list-style:none;margin:0;padding:0 0 0 2rem;position:relative}
+.timeline::before{content:"";position:absolute;left:.55rem;top:.4rem;bottom:.4rem;width:3px;background:var(--vien)}
+.timeline li{position:relative;background:var(--trang);border:1px solid var(--vien);border-radius:10px;padding:1.1rem 1.4rem;margin-bottom:1.3rem}
+.timeline li::before{content:"";position:absolute;left:-1.78rem;top:1.4rem;width:16px;height:16px;border-radius:50%;background:var(--nito);border:3px solid var(--giay)}
+.timeline li.buoc-ngoat{border:2px solid var(--oxy)}
+.timeline li.buoc-ngoat::before{background:var(--oxy);width:20px;height:20px;left:-1.9rem}
+.timeline .moc{font-family:var(--font-tieu-de);font-weight:800;color:var(--nito)}
+.timeline .buoc-ngoat .moc{color:var(--oxy)}
+.timeline h3{margin:.1rem 0 .4rem}
+.y-nghia{background:var(--giay);padding:.6rem .9rem;border-radius:6px;font-size:.98rem;margin:.6rem 0 0}
+.y-nghia strong{font-family:var(--font-tieu-de)}
+
+/* ----- Bảng ----- */
+table{border-collapse:collapse;width:100%;background:var(--trang);font-size:1rem}
+th,td{border:1px solid var(--vien);padding:.7rem .9rem;text-align:left;vertical-align:top}
+th{background:var(--muc);color:#fff;font-family:var(--font-tieu-de);font-weight:600}
+tbody tr:nth-child(even){background:#f0f3f5}
+.cuon-ngang{overflow-x:auto}
+
+/* ----- Gallery ----- */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
+.gallery figure{position:relative;overflow:hidden;border-radius:10px;background:var(--trang);border:1px solid var(--vien)}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0;transition:transform .4s}
+.gallery figure:hover img{transform:scale(1.08)}
+.gallery figcaption{padding:.6rem .8rem}
+.video{position:relative;aspect-ratio:16/9;max-width:760px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:8px}
+
+/* ----- Ảnh trong bài ----- */
+.anh-bai{float:right;width:min(320px,42%);margin:0 0 1rem 1.5rem}
+.xoa::after{content:"";display:block;clear:both}
+.nhan-xet{background:var(--trang);border-left:6px solid var(--oxy);padding:1.2rem 1.5rem;border-radius:0 8px 8px 0}
+.nhan-xet h3{margin-top:0;color:var(--oxy)}
+.nhan-xet p:last-child{margin-bottom:0}
+.nguon li{margin-bottom:.9rem}
+
+/* ----- Footer ----- */
+footer.site{background:var(--muc);color:#b8c4d0;padding:1.6rem 0;font-family:var(--font-tieu-de);font-size:.9rem}
+footer.site p{max-width:none;margin:.2rem 0}
+footer.site a{color:#fff}
+
+/* ----- Điện thoại / máy tính bảng ----- */
+@media (max-width:768px){
+  body{font-size:1rem}
+  .hero,.hai-cot{grid-template-columns:1fr}
+  .hero{padding:1.8rem 0}
+  .hero img{aspect-ratio:1/1}
+  .anh-bai{float:none;width:100%;margin:0 0 1rem}
+  nav a{padding:.4rem .6rem;font-size:.85rem}
+  h2{font-size:1.4rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
